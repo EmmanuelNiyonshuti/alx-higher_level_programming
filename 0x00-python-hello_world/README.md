@@ -1,0 +1,1 @@
+This repository serve as a collaboration of my work during the higher-level programming track at Alx. in this sprint of the program, we deal with concepts in Python, MySQL and JavaScript. all the concepts to be learned in these projects continues to strengthen my skills in C and higher-level programming. The specific list of projects  will be listed as the program progresses.
