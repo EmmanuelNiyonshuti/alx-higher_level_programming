@@ -1,0 +1,1 @@
+This project explores Python's import and module functionalities. It strengthened my understanding in importing functions, dynamic scrpting, handling command line arguments, infinite addition, exploring compiled modules, and demonstrating variable importation in Python.
