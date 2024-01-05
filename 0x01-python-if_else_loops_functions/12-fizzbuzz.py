@@ -14,4 +14,3 @@ def fizzbuzz():
         if not output:
             output = str(number)
         print(output, end=" ")
-
