@@ -23,15 +23,11 @@ if __name__ == "__main__":
 
     if operator == '-':
         result = sub(a, b)
-        print(result)
     elif operator == '+':
         result = add(a, b)
-        print(result)
     elif operator == '*':
         result = mul(a, b)
-        print(result)
     elif operator == '/':
         result = div(a, b)
-        print(result)
 
-print(f"{a} {operator} {b} = {result}")
+print(f"{a} {operator} {b} =", result)
