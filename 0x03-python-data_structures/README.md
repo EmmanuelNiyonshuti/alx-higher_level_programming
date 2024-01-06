@@ -1,0 +1,1 @@
+This directory contains Python scripts addressing fundamental concepts in higher-level programming. Tasks include printing, list manipulation, secure element access, replacement, reverse list printing, tuple operations, and more. These scripts aid in solidifying my understanding within the ALX Higher Level Programming curriculum
