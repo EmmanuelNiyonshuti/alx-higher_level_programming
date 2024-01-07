@@ -3,10 +3,10 @@
 
 
 def replace_in_list(my_list, idx, element):
-    for i in my_list:
-        if i < 0:
+    while my_list[idx]:
+        if my_list[idx] < 0:
             return my_list
-        elif i > len(my_list):
+        elif my_list[idx] > len(my_list):
             return my_list
         else:
             my_list[idx] = element
