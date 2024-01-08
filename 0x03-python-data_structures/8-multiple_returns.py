@@ -3,10 +3,10 @@
 
 
 def multiple_returns(sentence):
+
     if not sentence:
         return (0, None)
-    new_str = tuple(sentence)
-    n = len(new_str)
-    first = new_str[0]
 
-    return (n, first)
+    new_str = tuple(sentence)
+
+    return (len(new_str), new_str[0])
