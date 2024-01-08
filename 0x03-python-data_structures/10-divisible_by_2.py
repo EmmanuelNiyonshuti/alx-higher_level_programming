@@ -5,6 +5,9 @@
 def divisible_by_2(my_list=[]):
 
     new_list = []
+    n = len(my_list)
+    n_new = len(new_list)
+    n_new = n
 
     for i in my_list:
         if i % 2 == 0:
