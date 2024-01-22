@@ -4,14 +4,16 @@
 def safe_print_list_integers(my_list=[], x=0):
 
     i = 0
+
     try:
-        for i in range(x):
-            value = int(my_list[i])
+        while i < x:
+            value = my_list[i]
+
+            if type(value) is not int:
+                raise ValueError
 
             print("{:d}".format(value), end="")
-
             i += 1
-
 
     except(ValueError, TypeError, IndexError):
         pass
