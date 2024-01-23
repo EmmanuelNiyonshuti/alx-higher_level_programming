@@ -3,13 +3,18 @@
 
 def safe_print_list_integers(my_list=[], x=0):
 
-    num_printed = 0
     try:
-        for i, value in enumerate(x):
-            if num_printed < x and isinstance(value, int):
-                print(":d}".format(value), end="")
-                num_printed += 1
+        num_printed = 0
+        for i in range(0, x):
+
+            int(my_list[i])
+
+            print("{:d}".format(my_list[i]), end="")
+
+            num_printed += 1
         print()
-    except (ValueError, TypeError, IndexError):
+
+    except (IndexError, TypeError):
         pass
+
     return num_printed
