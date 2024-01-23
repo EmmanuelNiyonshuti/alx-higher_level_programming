@@ -4,14 +4,15 @@
 
 def safe_print_list(my_list=[], x=0):
 
-    i = 0
+    num_elts = 0
     try:
         for i in range(x):
             print(my_list[i], end='')
+            num_elts += 1
     except IndexError:
         pass
 
     finally:
         print()
 
-    return i
+    return num_elts
