@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module comprises a class of Rectangle"""
 
+
 class Rectangle:
     """Defines a Rectangle"""
 
@@ -21,13 +22,15 @@ class Rectangle:
     def area(self):
         """Return the rectangle area"""
         return self.__height * self.__width
+
     def perimeter(self):
+
         """"Return the rectangle parameter"""
         if self.__height == 0:
             return 0
         if self.__width == 0:
             return 0
-        return 2 *(self.__height + self.__width)
+        return 2 * (self.__height + self.__width)
 
     @property
     def width(self):
