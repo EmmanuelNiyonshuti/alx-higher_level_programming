@@ -40,6 +40,7 @@ class Rectangle:
     def height(self):
         return self.__height
 
+    @height.setter
     def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -48,12 +49,12 @@ class Rectangle:
         self.__height = value
 
     def __str__(self):
-        if self.__height == 0 or self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
 
         rectangle_str = ""
         for _ in range(self.__height):
-            rectangle_str += Rectangle.print_symbol * self.__width + "\n"
+            rectangle_str += str(Rectangle.print_symbol) * self.__width + "\n"
 
         return rectangle_str[:-1]
 
