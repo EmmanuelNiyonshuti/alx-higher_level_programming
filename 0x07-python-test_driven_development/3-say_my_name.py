@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-This module contains a function prints full name
-
-"""
+"""This module contains a function prints full name."""
 
 
 def say_my_name(first_name, last_name=""):
