@@ -13,10 +13,16 @@ Passing first_name and last_name correctly
     >>> say_my_name("Emmanuel", "NIYONSHUTI")
     My name is Emmanuel NIYONSHUTI
 
-Passing first_name and last_name correctly 2
+Passing last_name correctly
 
     >>> say_my_name("Emmanuel")
     My name is Emmanuel
+
+Passing None as the first_name
+	>>> say_my_name(None, "NIYONSHUTI"):
+	Traceback (most recent call lat):
+		...
+	TypeError: first_name must be a string
 
 Passing None as the last_name
 
