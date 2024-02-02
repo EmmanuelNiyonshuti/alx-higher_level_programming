@@ -23,6 +23,7 @@ class TestMaxInt(unittest.TestCase):
     def mixed_types(self):
         """Test for a list with mixed types"""
         self.assertEqual(max_integer([1, "a", "k", 9]), 9)
+        self.assertEqual(max_integer([1.0, 2.5, 7.2, -1.5, 10.2]), 10.2)
 
     if __name__=='__main__':
         unittest.main()
