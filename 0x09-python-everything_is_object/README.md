@@ -1,3 +1,0 @@
-	PYTHON - Everything is Object
-
-This project delves into Python's object instantiation, a core concept in object-oriented programming (OOP). Object instantiation involves creating instances of a class, serving as blueprints defining object properties and behaviors. The project, through quiz-style questions, reinforces understanding of key OOP principles, including objects and values, aliasing, immutable vs. mutable types, mutation, and the intricacies of cloning lists and Python tuples. The concise single-line .txt file answers provide practical insights, making this directory a valuable resource for mastering object instantiation in Python.
