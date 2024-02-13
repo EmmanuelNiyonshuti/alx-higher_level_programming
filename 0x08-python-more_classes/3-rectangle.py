@@ -34,7 +34,7 @@ class Rectangle:
             return ""
         Rectangle_str = ""
         for _ in range(self.__height):
-            Rectangle_str += '#' * self.__width
+            Rectangle_str += '#' * self.__width + "\n"
         return Rectangle_str
 
     def __repr__(self):
