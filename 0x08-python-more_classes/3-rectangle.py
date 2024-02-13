@@ -28,21 +28,6 @@ class Rectangle:
             return 0
         return 2 * (self.__height + self.__width)
 
-    def __repr__(self):
-        """Print a rectangle with the character #"""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        return f'Rectangle({self.__height}, {self.__width})'
-
-    def __str__(self):
-        """Print the rectangle with the character #"""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        Rectangle_str = ""
-        for _ in range(self.__height):
-            Rectangle_str += '#' * self.__width + "\n"
-        return Rectangle_str.strip()
-
     @property
     def width(self):
         """Retrieving width"""
@@ -69,3 +54,18 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def __repr__(self):
+        """Print a rectangle with the character #"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return f'Rectangle({self.__height}, {self.__width})'
+
+    def __str__(self):
+        """Print the rectangle with the character #"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        Rectangle_str = ""
+        for _ in range(self.__height):
+            Rectangle_str += '#' * self.__width + "\n"
+        return Rectangle_str.strip()
