@@ -35,7 +35,7 @@ class Rectangle:
         Rectangle_str = ""
         for _ in range(self.__height):
             Rectangle_str += '#' * self.__width + "\n"
-        return Rectangle_str.strip()
+        return Rectangle_str.rstrip()
 
     def __repr__(self):
         """Print a rectangle with the character #"""
