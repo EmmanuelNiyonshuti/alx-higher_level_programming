@@ -4,6 +4,8 @@
 
 class Rectangle:
     """Defines a Rectangle"""
+
+    """Public Class attribute"""
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
@@ -16,9 +18,11 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
+
         self.__width = width
         self.__height = height
-        number_of_instances += 1
+        """Incremented during each new instance instantiation"""
+        Rectangle.number_of_instances += 1
 
     def area(self):
         """Returns the rectangle area"""
@@ -47,7 +51,9 @@ class Rectangle:
         """Prints a message when an instance of Rectangle is deleted"""
 
         print("Bye rectangle...")
-        number_of_instances -= 1
+
+        """Decremented during each instance deletion"""
+        Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
