@@ -5,6 +5,7 @@
 class Rectangle:
     """Defines a Rectangle"""
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """Instantiation with optional width and height"""
@@ -18,7 +19,7 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__width = width
         self.__height = height
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def area(self):
         """Returns the rectangle area"""
@@ -36,7 +37,7 @@ class Rectangle:
             return ""
         Rectangle_str = ""
         for _ in range(self.__height):
-            Rectangle_str += '#' * self.__width + "\n"
+            Rectangle_str += Rectangle.print_symbol * self.__width + "\n"
         return Rectangle_str.strip()
 
     def __repr__(self):
@@ -47,7 +48,7 @@ class Rectangle:
         """Prints a message when an instance of Rectangle is deleted"""
 
         print("Bye rectangle...")
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
