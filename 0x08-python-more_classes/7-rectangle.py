@@ -37,8 +37,9 @@ class Rectangle:
             return ""
         Rectangle_str = ""
         for _ in range(self.__height):
-            Rectangle_str += Rectangle.print_symbol * self.__width + "\n"
-        return Rectangle_str.strip()
+            Rectangle_str += str(self.print_symbol) * self.__width + "\n"
+
+        return Rectangle_str[:-1]
 
     def __repr__(self):
         """Returns a string Representation of the rectangle"""
