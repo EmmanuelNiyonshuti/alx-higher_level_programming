@@ -4,6 +4,7 @@ This module comprises a function that prints a text
 based on conditions.
 """
 
+
 def text_indentation(text):
     """Prints a text with 2 new lines after '.', '?', ':'
 
