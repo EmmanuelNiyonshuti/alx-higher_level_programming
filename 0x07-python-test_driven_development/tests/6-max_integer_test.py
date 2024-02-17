@@ -14,6 +14,11 @@ class TestList(unittest.TestCase):
         self.assertEqual(max_integer([-1, 0,-3, -4]), 0)
         self.assertEqual(max_integer([-1, -2,-3, -4]), -1)
         self.assertEqual(max_integer([]), None)
+        self.assertEqual(max_integer(), None)
+        self.assertEqual(max_integer([1]), 1)
+        self.assertEqual(max_integer([[5, 0], [4, 20]]), [5, 0])
+        with self.assertRaises(TypeError):
+            max_integer(["hello", 1, 2])
 
 
 
