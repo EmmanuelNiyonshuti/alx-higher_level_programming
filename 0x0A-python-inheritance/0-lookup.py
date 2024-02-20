@@ -14,8 +14,4 @@ def lookup(obj):
     Return:
     list of available attributes and methods.
     """
-
-    list_obj = []
-    list_obj.append(dir(obj))
-
-    return list_obj
+    return dir(obj)
