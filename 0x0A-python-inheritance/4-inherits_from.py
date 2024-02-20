@@ -2,6 +2,8 @@
 """
 This Module to provide functionality for checking inheritance relationships.
 """
+
+
 def inherits_from(obj, a_class):
     """
     Return True if the object is an instance of a class that inherited
