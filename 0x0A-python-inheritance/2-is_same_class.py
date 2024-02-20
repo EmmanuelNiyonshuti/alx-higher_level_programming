@@ -8,7 +8,7 @@ if an object is an instance of a specified class.
 def is_same_class(obj, a_class):
     """
     - is_same_class - checks if an object is
-    an instance of instance of a class.
+    an instance of a specified class.
 
     args:
     - obj: The object.
@@ -19,7 +19,4 @@ def is_same_class(obj, a_class):
     False otherwise.
     """
 
-    if isinstance(obj, a_class):
-        return True
-    else:
-        return False
+    return type(obj) == a_class
