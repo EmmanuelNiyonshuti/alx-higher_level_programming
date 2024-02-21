@@ -3,6 +3,7 @@
 this module comprise a function that writes to a file.
 """
 
+
 def write_file(filename="", text=""):
     """
     write_file - writes a string to a text file.
