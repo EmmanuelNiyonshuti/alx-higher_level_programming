@@ -3,6 +3,7 @@
 This module Contains a function that represents Pascal's Triangle.
 """
 
+
 def pascal_triangle(n):
     """
     pascal_triangle: Represents a pascal's triangle.
@@ -16,6 +17,7 @@ def pascal_triangle(n):
         return []
 
     p_triangle = [[1]]
+
     for i in range(1, n):
         prev = p_triangle[-1]
         next_row = [1]
@@ -25,6 +27,3 @@ def pascal_triangle(n):
         p_triangle.append(next_row)
 
     return p_triangle
-
-            
-
