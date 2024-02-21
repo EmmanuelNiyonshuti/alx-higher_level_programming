@@ -2,6 +2,7 @@
 """comprise a function that perform file operations
 """
 
+
 def append_write(filename="", text=""):
     """
     append_write -  appends a string at the end of a text file.
