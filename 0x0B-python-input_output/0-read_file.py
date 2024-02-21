@@ -11,5 +11,6 @@ def read_file(filename=""):
     Nothing.
     """
 
-    with open("filename", encoding="utf-8") as a_file:
-        print(a_file)
+    with open(filename, encoding="utf-8") as a_file:
+        for line in a_file:
+            print(line, end='')
