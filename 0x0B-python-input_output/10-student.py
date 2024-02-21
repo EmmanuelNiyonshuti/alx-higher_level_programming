@@ -14,12 +14,12 @@ class Student:
 
     def to_json(self, attrs=None):
         """
-        Retrieves a dictionary representation of a Student instance.
+        Retrieves a dictionary representation of a Student
         If attrs is a list of strings,
         only attribute names contained in this list must be retrieved.
-        Otherwise, all attributes must be retrieved.
+        otherwise, retrieve all other attributes.
         """
-        if attrs is None or not isinstance(attrs, list):
-            return self.__dict
-        return {attr: getattr(self, attr)
-                for attr in attrs if hasattr(self, attr)}
+        if (type(attrs) == list and
+                all(type(ele) == str for ele in attrs)):
+            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
+        return self.
