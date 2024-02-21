@@ -19,7 +19,8 @@ class Student:
         only attribute names contained in this list must be retrieved.
         otherwise, retrieve all other attributes.
         """
-        if (type(attrs) == list and
-                all(type(ele) == str for ele in attrs)):
-            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
-        return self.__dict
+        if attrs is None or not isinstance(attrs, list):
+            return self.__dict__
+
+        return {attr: getattr(self, attr)
+                for attr in attrs if hasattr(self, attr)}
