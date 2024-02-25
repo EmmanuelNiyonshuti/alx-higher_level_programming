@@ -55,3 +55,26 @@ class Base:
         with open(filename, "w", encoding="utf-8") as a_file:
             a_file.write(json_str)
 
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or len(json_string) == 0:
+            return '[]'
+        return json.loads(json_string)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
