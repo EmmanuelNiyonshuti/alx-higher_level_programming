@@ -57,9 +57,23 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        from_json_string - deserialize json string.
+        args:
+        - json_string: a string representing a list of dictionaries.
+        Return:
+        If json_string is None or empty, return an empty list.
+        Otherwise, return the list represented by json_string.
+        """
         if json_string is None or len(json_string) == 0:
             return '[]'
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        dummy_obj = cls(1, 2)
+        dummy_obj.update(**dictionary)
+        return dummy_obj
 
 
 
