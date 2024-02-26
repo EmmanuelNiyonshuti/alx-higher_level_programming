@@ -123,7 +123,7 @@ class Rectangle(Base):
         if not len(args):
             for key, value in kwargs.items():
                 setattr(self, key, value)
-                #self.__setattr__(key, value)
+                """self.__setattr__(key, value)"""
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle"""

@@ -13,14 +13,18 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Instantiation"""
 
+        """width and height of a square are equal"""
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        return self.height
+        """retrieving the size of the square"""
+        return self.width
+        """return self.height"""
 
     @size.setter
     def size(self, value):
+        """setting the size of the square"""
         self.width = value
         self.height = value
 
@@ -37,8 +41,7 @@ class Square(Rectangle):
         - kwargs:  key worded arguments.
         """
         if len(args) == 0:
-            for key, value in kwargs.items():
-                self.__setattr__(key, value)
+            super().update(**kwargs)
         try:
             self.id = args[0]
             self.size = args[1]
