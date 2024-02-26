@@ -15,23 +15,24 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
         super().__init__(id)
-        if type(self.__width) != int:
+        if type(width) != int:
             raise TypeError("width must be an integer")
-        if type(self.__height) != int:
+        if type(height) != int:
             raise TypeError("height must be an integer")
-        if type(self.__x) != int:
+        if type(x) != int:
             raise TypeError("x must be an integer")
-        if type(self.__y) != int:
+        if type(y) != int:
             raise TypeError("y must be an integer")
-        if self.__width <= 0:
+        if width <= 0:
             raise ValueError("width must be > 0")
-        if self.__height <= 0:
+        if height <= 0:
             raise ValueError("height must be > 0")
-        if self.__x < 0:
+        if x < 0:
             raise ValueError("x must be >= 0")
-        if self.__y < 0:
+        if y < 0:
             raise ValueError("y must be >= 0")
 
+    """managing attributes"""
     @property
     def width(self):
         """Retrieving width"""
@@ -90,22 +91,22 @@ class Rectangle(Base):
 
     def area(self):
         """Returns the area of a rectangle"""
-        return self.__height * self.__width
+        return self.height * self.width
 
     def display(self):
         """prints string representation of object as '#'"""
         rect = ""
         print("\n" * self.__x, end="")
         for _ in range(self.__height):
-            rect += (" " * self.__y) + ("#" * self.__width) + "\n"
+            rect += ("" * self.__y) + ("#" * self.__width) + "\n"
         print(rect, end="")
 
     def __str__(self):
         """Prints string representation of the object"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        return f'[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
 
     def update(self, *args, **kwargs):
-        """assigns positional arguments to each attribute of the object.
+        """assigns positional arguments to each attribute.
             args:
             - args: no-keyword argument.
             -kwargs: key-worded argument.
@@ -121,7 +122,8 @@ class Rectangle(Base):
 
         if not len(args):
             for key, value in kwargs.items():
-                self.__setattr__(key, value)
+                setattr(self, key, value)
+                #self.__setattr__(key, value)
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle"""

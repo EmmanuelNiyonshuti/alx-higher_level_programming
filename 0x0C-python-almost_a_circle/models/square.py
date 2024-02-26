@@ -12,23 +12,17 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """Instantiation"""
-        Rectangle.__init__(self, size, size, x, y, id)
-        self.size = size
 
-    """overridding public instance method from Rectangle"""
+        super().__init__(size, size, x, y, id)
+
     @property
-    def width(self):
-        """Retrieving size of the square"""
-        return self.size
+    def size(self):
+        return self.height
 
-    @width.setter
-    def width(self, value):
-        """validating size of the square"""
-        if type(value) != int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.size = value
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """string representation of the square"""
