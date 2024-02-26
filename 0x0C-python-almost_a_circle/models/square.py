@@ -6,6 +6,7 @@ which is also a child class of the parent class.
 
 from .rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Inherits from Rectangle class"""
 
@@ -13,12 +14,13 @@ class Square(Rectangle):
         """Instantiation"""
         Rectangle.__init__(self, size, size, x, y, id)
         self.size = size
-    
-    #overridding public instance method from Rectangle
+
+    """overridding public instance method from Rectangle"""
     @property
     def width(self):
         """Retrieving size of the square"""
         return self.size
+
     @width.setter
     def width(self, value):
         """validating size of the square"""
@@ -30,7 +32,9 @@ class Square(Rectangle):
 
     def __str__(self):
         """string representation of the square"""
-        return '[Square]({}) {}/{} - {}'.format(self.id, self.x, self.y, self.size)
+        return '[Square]({}) {}/{} - {}'.format(self.id, self.x,
+                                                self.y, self.size)
+
     def update(self, *args, **kwargs):
         """
         - update: assigns attributes.
@@ -48,3 +52,12 @@ class Square(Rectangle):
             self.y = args[3]
         except IndexError:
             pass
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Square"""
+        return {
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y
+                }

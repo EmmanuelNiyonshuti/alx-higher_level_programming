@@ -4,6 +4,7 @@ This module provides class that inherits from another class.
 """
 from .base import Base
 
+
 class Rectangle(Base):
     """Inherits from Base base class.
     """
@@ -35,6 +36,7 @@ class Rectangle(Base):
     def width(self):
         """Retrieving width"""
         return self.__width
+
     @width.setter
     def width(self, value):
         """setting the value"""
@@ -48,6 +50,7 @@ class Rectangle(Base):
     def height(self):
         """Retrieving height"""
         return self.__height
+
     @height.setter
     def height(self, value):
         """setting the value"""
@@ -61,6 +64,7 @@ class Rectangle(Base):
     def x(self):
         """Retrieving x"""
         return self.__x
+
     @x.setter
     def x(self, value):
         """setting the value"""
@@ -74,6 +78,7 @@ class Rectangle(Base):
     def y(self):
         """Retrieving y"""
         return self.__y
+
     @y.setter
     def y(self, value):
         """setting the value"""
@@ -97,7 +102,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """Prints string representation of the object"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """assigns positional arguments to each attribute of the object.
@@ -118,4 +123,12 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 self.__setattr__(key, value)
 
-
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        return {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y
+                }
