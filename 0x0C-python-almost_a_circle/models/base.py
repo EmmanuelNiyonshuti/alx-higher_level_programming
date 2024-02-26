@@ -72,6 +72,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """"returns an instance with all attributes already set"""
         dummy_obj = cls(1, 2)
 
         dummy_obj.update(**dictionary)
@@ -80,6 +81,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """returns list of instances"""
         class_name = cls.__name__
         filename = f"{class_name}.json"
         try:
