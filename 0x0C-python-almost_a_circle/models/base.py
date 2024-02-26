@@ -2,11 +2,14 @@
 """
 This module comprises a Base class.
 """
+
 import json
+
 
 class Base:
     """My Base class"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """Instantiation with id"""
         if id is not None:
@@ -38,20 +41,17 @@ class Base:
         - list_objs:  a list of instances who inherits of Base
                     example: list of Rectangle or list of Square instances.
         """
-        #getting the class name
-        class_name = cls.__name__
-        #prepare class name
-        filename = f"{class_name}.json"
+        filename = cls.__name__ + ".json"
 
         if list_objs is None:
             list_objs = []
- 
-        #Convert list of objects into list of dictionaries
+
+        """Convert list of objects into list of dictionaries"""
         list_dicts = [obj.to_dictionary() for obj in list_objs]
-        #convert list of dictionaries to JSON string
+        """convert list of dictionaries to JSON string"""
         json_str = cls.to_json_string(list_dicts)
-        
-        ## Write JSON string to file, overwriting if it already exists
+
+        """Write JSON string to file, overwriting if it already exists"""
         with open(filename, "w", encoding="utf-8") as a_file:
             a_file.write(json_str)
 
@@ -76,7 +76,6 @@ class Base:
         dummy_obj.update(**dictionary)
 
         return dummy_obj
-
 
     @classmethod
     def load_from_file(cls):
