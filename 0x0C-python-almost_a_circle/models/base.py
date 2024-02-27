@@ -5,6 +5,7 @@ This module comprises a Base class.
 
 import json
 import csv
+import turtle
 
 class Base:
     """My Base class"""
@@ -113,3 +114,51 @@ class Base:
             for row in reader:
                 objs.append(cls.from_csv_row(row))
                 return objs
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Draws all rectangles and squares using Turtle graphics.
+
+        Args:
+            list_rectangles (list): List of Rectangle objects to draw.
+            list_squares (list): List of Square objects to draw.
+        """
+        # Create a screen for drawing
+        screen = turtle.Screen()
+        screen.title("Rectangles and Squares")
+
+        # Set up the turtle
+        t = turtle.Turtle()
+        t.speed(0)  # Set the drawing speed (0 is fastest)
+        t.penup()   # Lift the pen (don't draw while moving)
+        t.hideturtle()  # Hide the turtle icon
+
+        # Draw rectangles
+        for rect in list_rectangles:
+            t.setpos(rect.x, rect.y)  # Move turtle to the starting position of the rectangle
+            t.pendown()  # Lower the pen (start drawing)
+            t.begin_fill()  # Begin filling the shape
+            t.color("blue")  # Set the color of the shape (example color: blue)
+            for _ in range(2):
+                t.forward(rect.width)  # Move forward by the width of the rectangle
+                t.left(90)  # Turn left by 90 degrees (to draw a corner)
+                t.forward(rect.height)  # Move forward by the height of the rectangle
+                t.left(90)  # Turn left by 90 degrees (to draw another corner)
+            t.end_fill()  # End filling the shape
+            t.penup()  # Lift the pen (stop drawing)
+
+        # Draw squares
+        for square in list_squares:
+            t.setpos(square.x, square.y)  # Move turtle to the starting position of the square
+            t.pendown()  # Lower the pen (start drawing)
+            t.begin_fill()  # Begin filling the shape
+            t.color("green")  # Set the color of the shape (example color: green)
+            for _ in range(4):
+                t.forward(square.size)  # Move forward by the size of the square
+                t.left(90)  # Turn left by 90 degrees (to draw a corner)
+            t.end_fill()  # End filling the shape
+            t.penup()  # Lift the pen (stop drawing)
+
+        # Close the window when clicked
+        screen.exitonclick()
