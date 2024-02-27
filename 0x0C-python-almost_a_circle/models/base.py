@@ -75,7 +75,7 @@ class Base:
         """"returns an instance with all attributes already set"""
         dummy_obj = cls(1, 2)
 
-        dummy_obj.update(3, 4, **dictionary)
+        dummy_obj.update(*args, **dictionary)
 
         return dummy_obj
 
