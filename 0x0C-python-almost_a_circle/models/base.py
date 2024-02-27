@@ -4,7 +4,7 @@ This module comprises a Base class.
 """
 
 import json
-
+import csv
 
 class Base:
     """My Base class"""
@@ -93,3 +93,23 @@ class Base:
         instances = [cls.create(**obj_dict) for obj_dict in list_dict]
 
         return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serialize python object to csv."""
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline='', encoding="utf-8") as f:
+            writer = csv.writer(f)
+            for obj in list_objs:
+                writer.writerow(obj.to_csv_row())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize objects from CSV file."""
+        filename = cls.__name__ + ".csv"
+        objs = []
+        with open(filename, newline='', encoding="utf-8") as f:
+            reader = csv.reader(f)
+            for row in reader:
+                objs.append(cls.from_csv_row(row))
+                return objs
