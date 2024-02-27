@@ -73,9 +73,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """"returns an instance with all attributes already set"""
-        dummy_obj = cls(1, 2)
-        dummy_obj = cls(1, 1)
-        dummy_obj.update(**dictionary)
+        dummy_obj = cls(1, 2, 5, 7)
+        dummy_instance = cls(1, 1)
+        dummy_instance.update(**dictionary)
         cls.update(dummy_obj, **dictionary)
 
         return dummy_obj
