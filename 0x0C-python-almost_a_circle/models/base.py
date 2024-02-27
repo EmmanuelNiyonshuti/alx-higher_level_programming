@@ -73,7 +73,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """"returns an instance with all attributes already set"""
-        dummy_objs = cls(1, 2)
+        dummy_objs = cls(1, 2, 3)
         cls.update(dummy_objs, **dictionary)
 
         return dummy_objs
