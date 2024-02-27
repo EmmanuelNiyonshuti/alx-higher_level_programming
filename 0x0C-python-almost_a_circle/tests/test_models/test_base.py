@@ -1,21 +1,31 @@
 #!/usr/bin/python3
-"""test for base class"""
+"""
+This module comprises a class that tests base class.
+"""
 
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+
 
 class TestBase(unittest.TestCase):
-    """Tests Base class"""
+    """Test base class attributes and methods"""
 
-    def test_id_None(self):
-        self.assertEqual(Base._Base__nb_objects, 0)
-        self.assertEqual(type(Base()), Base)
-        self.assertEqual(Base().id, 2)
-        self.assertEqual(Base(None).id, 3)
-        self.assertEqual(Base._Base__nb_objects, 3)
-
-    def test_valid_id(self):
-        self.assertEqual(Base(19).id, 19)
-        self.assertEqual(Base(1000).id, 1000)
-        self.assertEqual(Base(-78).id, -78)
-        self.assertEqual(Base(5.4).id, 5.4)
+    def test_id(self):
+        """Tests the id instance attribute"""
+        base1 = Base()
+        base2 = Base(15)
+        base3 = Base()
+        base4 = Base(12)
+        base5 = Base()
+        self.assertEqual(base1.id, 1)
+        self.assertEqual(base2.id, 15)
+        self.assertEqual(base3.id, 2)
+        self.assertEqual(base4.id, 12)
+        self.assertEqual(base5.id, 3)
+    def test_to_json(self):
+        r1 = Rectangle(10, 7, 2, 8)
+        dictionary = r1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(type(dictionary), dict)
+        self.assertEqual(type(json_dictionary), str)
