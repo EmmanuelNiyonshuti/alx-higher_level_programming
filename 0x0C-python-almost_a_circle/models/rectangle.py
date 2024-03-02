@@ -138,8 +138,10 @@ class Rectangle(Base):
                 }
 
     def to_csv_row(self):
+        """serialize to csv"""
         return [self.id, self.width, self.height, self.x, self.y]
 
     @classmethod
+    """deserialize from csv"""
     def from_csv_row(cls, row):
         return cls(*map(int, row))
