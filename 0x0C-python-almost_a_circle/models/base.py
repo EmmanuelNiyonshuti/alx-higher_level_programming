@@ -7,6 +7,7 @@ import json
 import csv
 import turtle
 
+
 class Base:
     """My Base class"""
     __nb_objects = 0
@@ -155,10 +156,9 @@ class Base:
             t.begin_fill()  # Begin filling the shape
             t.color("green")  # Set the color of the shape (example color: green)
             for _ in range(4):
-                t.forward(square.size)  # Move forward by the size of the square
-                t.left(90)  # Turn left by 90 degrees (to draw a corner)
-            t.end_fill()  # End filling the shape
-            t.penup()  # Lift the pen (stop drawing)
+                t.forward(square.size)
+                t.left(90)
+            t.end_fill()
+            t.penup()
 
-        # Close the window when clicked
         screen.exitonclick()
