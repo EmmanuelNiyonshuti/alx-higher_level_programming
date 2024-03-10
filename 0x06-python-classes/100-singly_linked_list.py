@@ -7,6 +7,7 @@ This module provides classes that defines a linked list.
 class Node:
     """Node that defines a node of a singly linked list"""
     def __init__(self, data, next_node=None):
+        """initializing"""
         self.__data = data
         self.__next_node = next_node
 
@@ -35,6 +36,7 @@ class SinglyLinkedList:
     """defines a singly linked list"""
 
     def __init__(self):
+        """initializing"""
         self.head = None
 
     def sorted_insert(self, value):
