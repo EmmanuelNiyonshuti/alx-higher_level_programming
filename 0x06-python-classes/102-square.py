@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """Square Module: Contains the Square class"""
 
+from functools import total_ordering
 
+
+@total_ordering
 class Square:
     """class Square that defines a square"""
     def __init__(self, size=0):
@@ -35,17 +38,17 @@ class Square:
     def __eq__(self, other):
         return self._size == other
 
-    def __ne__(self, other):
-        return self._size != other
+    # def __ne__(self, other):
+    #     return self._size != other
 
-    def __gt__(self, other):
-        return self._size > other
+    # def __gt__(self, other):
+    #     return self._size > other
 
-    def __ge__(self, other):
-        return self._size >= other
+    # def __ge__(self, other):
+    #     return self._size >= other
 
     def __lt__(self, other):
         return self._size < other
 
-    def __le__(self, other):
-        return self._size <= other
+    # def __le__(self, other):
+    #     return self._size <= other
