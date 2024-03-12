@@ -1,6 +1,5 @@
 """
-Testing BaseGeometry class using doctest model
-Import the class:
+Testing BaseGeometry class using doctest model.
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
@@ -27,3 +26,9 @@ Import the class:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
 [ValueError] distance must be greater than 0
+>>> try:
+...     bg.integer_validator("float_val", 3.14)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] float_val must be an integer
