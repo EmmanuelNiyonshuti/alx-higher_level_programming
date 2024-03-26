@@ -1,0 +1,3 @@
+0x0D. SQL - Introduction
+
+This project focuses on essential SQL and MySQL tasks. It covers database creation, table management, and basic querying. Tasks include listing databases, creating and removing databases, creating tables, inserting and updating data, and executing various queries. Additionally, it involves tasks like computing averages, listing records based on specific conditions, and managing data integrity and many more. Through these tasks, I gained practical experience in SQL and MySQL fundamentals.
