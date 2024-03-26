@@ -1,3 +1,4 @@
 -- Prints the full description of the table.
 -- Te database name will be passed as an argument of the mysql command
-SHOW COLUMNS FROM first_table;
+-- without using DESCRIBE or EXPLAIN statements.
+SHOW FULL COLUMNS FROM first_table;
