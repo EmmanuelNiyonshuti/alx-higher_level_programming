@@ -1,3 +1,3 @@
 -- Displays the number of records with id = 89 in the table
 -- the database name will be passed as an argument of the mysql command
-SELECT COUNT(id) FROM first_table;
+SELECT COUNT(id) FROM first_table WHERE id = 89;
