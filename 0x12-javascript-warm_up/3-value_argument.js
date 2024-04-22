@@ -11,8 +11,4 @@ function getLen (string) {
   return i;
 }
 
-if (getLen(process.argv) <= 2) {
-  console.log('No argument');
-}
-
-for (let i = 2; i < getLen(process.argv); i++) { console.log(process.argv[i]); }
+if (getLen(process.argv) <= 2) { console.log('No argument'); } else { console.log(process.argv[2]); }
