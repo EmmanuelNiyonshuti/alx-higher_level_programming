@@ -21,13 +21,15 @@ if __name__ == "__main__":
     """create a cursor and use it to execute sql queries"""
     cur = conn.cursor()
 
+try:
     cur.execute("""SELECT * FROM states
                 WHERE name LIKE 'N%' ORDER BY states.id ASC""")
-
     """fetch the rows and print the results"""
     rows = cur.fetchall()
     for row in rows:
         print(row)
+except MySQLdb._exceptions.ProgrammingError:
+    pass
 
     """close the connection"""
     cur.close()
