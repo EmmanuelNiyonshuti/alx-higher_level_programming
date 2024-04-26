@@ -25,7 +25,7 @@ if __name__ == "__main__":
                 WHERE name LIKE 'N%' ORDER BY states.id ASC""")
 
     """fetch the rows and print the results"""
-    rows = cur.fetchmany(size=2)
+    rows = cur.fetchall()
     for row in rows:
         print(row)
 
