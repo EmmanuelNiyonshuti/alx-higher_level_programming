@@ -9,21 +9,19 @@ import sys
 
 if __name__ == "__main__":
 
-    my_dict = {
-        'host': '127.0.0.1',
-        'user': sys.argv[1],
-        'password': sys.argv[2],
-        'db': sys.argv[3]
-    }
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    db = sys.argv[3]
+    host = 'localhost'
 
-    connect = MySQLdb.connect(**my_dict)
+    connect = MySQLdb.connect(host, user, passwd, db)
     cursor = connect.cursor()
 
     state_name = sys.argv[4]
 
-    cursor.execute("""
-                   SELECT cities.name FROM cities
-                   INNER JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC
+    cursor.execute("""SELECT cities.name FROM cities
+                   INNER JOIN states ON cities.state_id = states.id
+                   WHERE states.name = %s ORDER BY cities.id ASC
                    """, (state_name, ))
 
     cities = cursor.fetchall()
