@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/python3
 """
 This script takes in an argument and displays all values
 in the states table of
@@ -9,15 +9,13 @@ import sys
 
 if __name__ == "__main__":
 
-    """get the arguments"""
-    my_dict = {
-        'host': '127.0.0.1',
-        'user': sys.argv[1],
-        'passwd': sys.argv[2],
-        'db': sys.argv[3]
-    }
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    db = sys.argv[3]
+    host = 'localhost'
+
     """connect to the db"""
-    conn = MySQLdb.connect(**my_dict)
+    conn = MySQLdb.connect(host, user, passwd, db)
     """create a cursor and use it to execute sql queries
     and fetch the rows from the table"""
     curr = conn.cursor()
