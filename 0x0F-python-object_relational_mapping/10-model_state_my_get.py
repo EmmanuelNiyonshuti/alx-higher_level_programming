@@ -5,7 +5,6 @@ from the database hbtn_0e_6_usa.
 """
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from sqlalchemy import text
 import sys
 from model_state import Base, State
 
@@ -20,10 +19,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    querry = session.query(State).filter(State.name == text(':name'))
+    querry = session.query(State).filter(State.name == state_name)
 
-    result = querry.params(name=state_name).all()
+    result = querry.first()
     if not result:
         print("Not Found")
     else:
-        [print(f"{state.id}") for state in result]
+        print(result.id)
