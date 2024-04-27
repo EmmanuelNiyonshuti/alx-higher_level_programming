@@ -6,8 +6,10 @@ from sqlalchemy import Column, Integer, String
 
 Base = declarative_base()
 
+
 class State (Base):
     """state class that inherits from base"""
     __tablename__ = 'states'
-    id = Column(Integer, nullable=False, autoincrement=True, unique=True, primary_key=True)
+    id = Column(Integer, nullable=False,
+                autoincrement=True, unique=True, primary_key=True)
     name = Column(String(128), nullable=False)

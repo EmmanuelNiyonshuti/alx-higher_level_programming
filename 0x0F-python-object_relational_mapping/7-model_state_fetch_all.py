@@ -9,7 +9,8 @@ from sqlalchemy import asc
 from model_state import Base, State
 
 if __name__ == "__main__":
-    engine = create_engine('mysql://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    engine = create_engine('mysql://{}:{}@localhost/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]))
 
     """Create a sessionmaker with an engine"""
     Session = sessionmaker(bind=engine)
