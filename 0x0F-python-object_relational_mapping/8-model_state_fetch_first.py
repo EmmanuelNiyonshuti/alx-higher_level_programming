@@ -13,7 +13,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State).first()
-    if not query:
+    if not State:
         print()
-    print(f"{query.id}: {query.name}")
+    else:
+        query = session.query(State).first()
+        print(f"{query.id}: {query.name}")
+    session.close()
