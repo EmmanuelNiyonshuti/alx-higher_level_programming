@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     state_name = sys.argv[4]
     """sql injection vulnerable"""
-    curr.execute("""
-                 SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC
+    curr.execute("""SELECT * FROM states
+                 WHERE name = '{}' ORDER BY states.id ASC
                  """.format(state_name))
     rows = curr.fetchall()
     for row in rows:
