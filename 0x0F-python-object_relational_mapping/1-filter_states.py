@@ -18,7 +18,7 @@ if __name__ == "__main__":
     """create a cursor and use it to execute sql queries"""
     cur = conn.cursor()
     cur.execute("""
-                SELECT * FROM states WHERE SUBSTRING(name, 1, 1) = 'N'
+                SELECT states.id, states.name FROM states WHERE SUBSTRING(name, 1, 1) = 'N'
                 ORDER BY states.id ASC
                 """)
 
