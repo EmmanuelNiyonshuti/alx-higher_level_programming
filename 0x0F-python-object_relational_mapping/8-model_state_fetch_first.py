@@ -4,11 +4,13 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
-from model_state_connect import engine, session
+from model_state import State
 
 if __name__ == "__main__":
-
+    url = f"mysql://{sys.argv[1]}:{sys.argv[2]}@localhost/{sys.argv[3]}"
+    engine = create_engine(url)
+    Session = sessionmaker(bind=engine)
+    session = Session()
     first_state = session.query(State).first()
     if not first_state:
         print("Nothing")
