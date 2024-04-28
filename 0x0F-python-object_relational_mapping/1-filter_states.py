@@ -22,7 +22,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     cur.execute("""SELECT * FROM states
-                WHERE name LIKE 'N%' ORDER BY states.id ASC""")
+                WHERE name like 'N%' ORDER BY states.id ASC""")
     """fetch the rows and print the results"""
     rows = cur.fetchall()
     for row in rows:
