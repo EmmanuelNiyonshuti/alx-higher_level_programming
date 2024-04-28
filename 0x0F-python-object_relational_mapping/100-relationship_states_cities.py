@@ -9,7 +9,7 @@ from relationship_state import Base, State
 from relationship_city import City
 
 if __name__ == "__main__":
-    
+
     user_name = sys.argv[1]
     passwd = sys.argv[2]
     db = sys.argv[3]
@@ -18,8 +18,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_name = State(name = "California")
-    city_name = City(name = "San Francisco", state = state_name)
+    state_name = State(name="California")
+    city_name = City(name="San Francisco", state=state_name)
 
     session.add_all([state_name, city_name])
     session.commit()
