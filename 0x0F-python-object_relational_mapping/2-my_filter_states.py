@@ -19,15 +19,13 @@ if __name__ == "__main__":
     """create a cursor and use it to execute sql queries
     and fetch the rows from the table"""
     curr = conn.cursor()
-
     state_name = sys.argv[4]
-    """sql injection vulnerable"""
+    """sql injection vulnerable query"""
     curr.execute("""SELECT * FROM states
                  WHERE name = '{}' ORDER BY states.id ASC
                  """.format(state_name))
     rows = curr.fetchall()
     for row in rows:
         print(row)
-
     curr.close()
     conn.close()

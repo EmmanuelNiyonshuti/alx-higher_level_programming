@@ -9,7 +9,6 @@ from sqlalchemy.orm import sessionmaker, joinedload
 import sys
 
 if __name__ == "__main__":
-
     engine = create_engine("mysql://{}:{}@localhost/{}".format(
         sys.argv[1], sys.argv[2], sys.argv[3]))
 

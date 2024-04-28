@@ -16,7 +16,6 @@ if __name__ == "__main__":
 
     """connect to the db"""
     conn = MySQLdb.connect(host, username, passwd, db)
-
     """create a cursor and use it to execute sql queries"""
     cur = conn.cursor()
 

@@ -21,3 +21,4 @@ if __name__ == "__main__":
     result = query.all()
     for state in result:
         print(f"{state.id}: {state.name}")
+    session.close()
