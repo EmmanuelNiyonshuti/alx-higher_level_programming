@@ -21,7 +21,7 @@ if __name__ == "__main__":
                 WHERE name LIKE 'N%' ORDER BY states.id ASC""")
 
     """fetch the rows and print the results"""
-    rows = cur.fetchall()
+    rows = cur.fetchmany()
     for row in rows:
         print(row)
     """close the connection"""
