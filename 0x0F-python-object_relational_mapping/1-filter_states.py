@@ -13,21 +13,17 @@ if __name__ == "__main__":
     username = sys.argv[1]
     passwd = sys.argv[2]
     db = sys.argv[3]
-    host = 'localhost'
-
     """connect to the db"""
-    conn = MySQLdb.connect(host, username, passwd, db)
-
+    conn = MySQLdb.connect(host = 'localhost', port = 3306, user = username, passwd = passwd, db = db)
     """create a cursor and use it to execute sql queries"""
     cur = conn.cursor()
-
     cur.execute("""SELECT * FROM states
-                WHERE name like 'C%' ORDER BY states.id ASC""")
+                WHERE name LIKE 'N%' ORDER BY states.id ASC""")
+
     """fetch the rows and print the results"""
     rows = cur.fetchall()
     for row in rows:
         print(row)
-
     """close the connection"""
     cur.close()
     conn.close()
