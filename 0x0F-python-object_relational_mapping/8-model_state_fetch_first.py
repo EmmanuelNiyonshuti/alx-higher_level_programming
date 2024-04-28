@@ -5,13 +5,9 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from model_state_connect import engine, session
 
 if __name__ == "__main__":
-    engine = create_engine("mysql://{}:{}@localhost/{}".format(
-        sys.argv[1], sys.argv[2], sys.argv[3]))
-
-    Session = sessionmaker(bind=engine)
-    session = Session()
 
     first_state = session.query(State).first()
     if not first_state:
