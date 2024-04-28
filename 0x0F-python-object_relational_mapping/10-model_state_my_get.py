@@ -19,11 +19,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_name = sys.argv[4]
     querry = session.query(State).filter(State.name == bindparam('state_name'))
-    result = querry.params(state_name=state_name).first()
+    result = querry.params(state_name=sys.argv[4]).all()
     if not result:
         print("Not Found")
     else:
-        print(result.id)
+        for state in result:
+            print(state.id)
     session.close()
