@@ -20,8 +20,8 @@ if __name__ == "__main__":
     session = Session()
 
     state_name = sys.argv[4]
-    querry = session.query(State).filter(State.name == state_name)
-    result = querry.first()
+    querry = session.query(State).filter(State.name == bindparam('state_name'))
+    result = querry.params(state_name=state_name).first()
     if not result:
         print("Not Found")
     else:
