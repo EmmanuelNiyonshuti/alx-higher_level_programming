@@ -18,7 +18,7 @@ if __name__ == "__main__":
     """create a cursor and use it to execute sql queries"""
     cur = conn.cursor()
     cur.execute("""
-                SELECT * FROM states WHERE SUBSTRING(NAME, 1, 1) = 'N'
+                SELECT * FROM states WHERE BINARY name LIKE 'N%'
                 ORDER BY states.id ASC
                 """)
 
