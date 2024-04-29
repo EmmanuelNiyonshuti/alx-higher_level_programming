@@ -13,11 +13,12 @@ if __name__ == "__main__":
     passwd = sys.argv[2]
     db = sys.argv[3]
     """connect to the db"""
-    conn = MySQLdb.connect(host='localhost', port=3306, user=username, passwd=passwd, db=db)
+    conn = MySQLdb.connect(host='localhost', port=3306,
+                           user=username, passwd=passwd, db=db)
     """create a cursor and use it to execute sql queries"""
     cur = conn.cursor()
     cur.execute("""
-                SELECT * FROM states WHERE SUBSTRING(name, 1, 1) = 'N'
+                SELECT * FROM states WHERE SUBSTRING(NAME, 1, 1) = 'N'
                 ORDER BY states.id ASC
                 """)
 
