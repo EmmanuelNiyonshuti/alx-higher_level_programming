@@ -1,0 +1,2 @@
+Best Case: O(logn)
+Worst Case:O(n)
