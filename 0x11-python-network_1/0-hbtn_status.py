@@ -5,7 +5,7 @@
 """
 import urllib.request
 
-url = "https://alx-intranet.hbtn.io/status"
+url = "http://0.0.0.0:5050/status"
 req = urllib.request.Request(url)
 with urllib.request.urlopen(req) as response:
     data = response.read()
