@@ -3,11 +3,11 @@
     fetches https://alx-intranet.hbtn.io/status
     using the package urllib
 """
-import urllib.request as request
+import urllib.request
 
 url = "https://alx-intranet.hbtn.io/status"
-req = request.Request(url)
-with request.urlopen(req) as response:
+req = urllib.request.Request(url)
+with urllib.request.urlopen(req) as response:
     data = response.read()
 print("Body response:")
 print("\t-type:", type(data))
