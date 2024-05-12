@@ -6,8 +6,8 @@
 import urllib.request as request
 
 url = "https://alx-intranet.hbtn.io/status"
-
-with request.urlopen(url) as response:
+req = request.Request(url)
+with request.urlopen(req) as response:
     body = response.read()
 
 print(f"Body response:\n"
