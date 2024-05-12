@@ -4,9 +4,9 @@
     using the package urllib
 """
 import urllib.request
-if __name__=="__main__":
-    url = "https://alx-intranet.hbtn.io/status"
-    req = urllib.request.Request(url)
+
+if __name__ == "__main__":
+    req = urllib.request.Request("https://alx-intranet.hbtn.io/status")
     with urllib.request.urlopen(req) as response:
         data = response.read()
     print("Body response:")
