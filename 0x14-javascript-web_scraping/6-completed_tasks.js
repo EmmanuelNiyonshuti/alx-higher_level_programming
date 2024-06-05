@@ -7,21 +7,20 @@ const r = require('request');
 const url = process.argv[2];
 
 r(url, (err, response, body) => {
-    if (err) {
-        console.error(err);
-        return;
+  if (err) {
+    console.error(err);
+    return;
+  }
+  const tasks = JSON.parse(body);
+  const completedTask = {};
+  for (let i = 0; i < tasks.length; i++) {
+    const task = tasks[i];
+    if (task.completed === true) {
+      if (!Object.prototype.hasOwnProperty.call(completedTask, task.userId)) {
+        completedTask[task.userId] = 0;
+      }
+      completedTask[task.userId]++;
     }
-    const tasks = JSON.parse(body);
-    const completedTasksByUserId = {};
-
-    tasks.forEach(task => {
-        if (task.completed === true) {
-            if (completedTasksByUserId.hasOwnProperty(task.userId)) {
-                completedTasksByUserId[task.userId]++;
-            } else {
-                completedTasksByUserId[task.userId] = 1;
-            }
-        }
-    });
-    console.log(completedTasksByUserId);
+  }
+  console.log(completedTask);
 });

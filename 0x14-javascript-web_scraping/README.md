@@ -35,10 +35,13 @@ To run the scripts in this project, you need to have Node.js installed. Follow t
    git clone https://github.com/your-username/repository-name.git
 
 2. Navigate to the project directory:
+    ```bash
    cd repository-name
 
 3. Install the required dependencies:
+    ```bash
    npm install
 
 4. Run the scripts:
+    ```bash
    node script-name.js
