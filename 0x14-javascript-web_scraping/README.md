@@ -1,9 +1,15 @@
 # 0x14. JavaScript - Web Scraping
 
-In this project, I worked on using the `fs` module in Node.js to perform various file operations such as reading and writing files. Additionally, I learned to interact with different APIs, including:
-
+In this project, I worked on using the `fs` module in Node.js to perform various file operations such as reading and writing files.
+Additionally, I learned to interact with different APIs, including:
 1. **Star Wars API**: [https://swapi-api.alx-tools.com/api/films/](https://swapi-api.alx-tools.com/api/films/)
 2. **JSONPlaceholder**: [https://jsonplaceholder.typicode.com/todos](https://jsonplaceholder.typicode.com/todos) - a free, fake, and reliable API for testing and prototyping
+
+
+The code uses the semistandard code style: 
+
+[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
+
 
 Throughout the project, I utilized the `request` module to make HTTP requests to these APIs and handle their responses.
 
